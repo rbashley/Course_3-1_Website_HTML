@@ -1,15 +1,17 @@
-/* Base styles */
+/* Base styles for HTML and body */
 html {
   box-sizing: border-box;
   font-size: 18px;
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
   background: #f7f9fa;
   color: #222;
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+/* Body layout and transition */
 body {
   margin: 0;
   padding: 0;
@@ -18,35 +20,34 @@ body {
   flex-direction: column;
   background: #f7f9fa;
   color: #222;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s; /* Smooth color transitions */
 }
 
+/* Header styles */
 header {
   background: #222e3a;
   color: #fff;
   padding: 2rem 0 1rem 0;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: background 0.3s;
 }
 
+/* Header title and subtitle */
 header h1 {
-  margin: 0.2em 0 0.1em 0;
+  margin: 0;
   font-size: 2.5rem;
-  letter-spacing: 1px;
-  font-weight: 700;
+  letter-spacing: 2px;
 }
 header p {
-  margin: 0 0 1em 0;
+  margin: 0.5rem 0 0 0;
   font-size: 1.2rem;
   font-weight: 400;
-  color: #b0c4d8;
 }
 
+/* Navigation styles */
 nav[role="navigation"] ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1em 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -54,9 +55,8 @@ nav[role="navigation"] ul {
 nav[role="navigation"] a {
   color: #b0c4d8;
   text-decoration: none;
-  font-weight: 500;
   font-size: 1.1rem;
-  padding: 0.3em 0.7em;
+  padding: 0.5em 1em;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
 }
@@ -64,175 +64,152 @@ nav[role="navigation"] a:focus,
 nav[role="navigation"] a:hover {
   background: #3a4a5a;
   color: #fff;
-  outline: none;
 }
 
+/* Main content area */
 main {
   flex: 1;
+  width: 100%;
   max-width: 900px;
-  margin: 2rem auto 0 auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  transition: background 0.3s, box-shadow 0.3s;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
+/* Section spacing */
 section {
   margin-bottom: 2.5rem;
 }
 
+/* Section headings */
 h2 {
   font-size: 2rem;
-  margin-bottom: 0.7em;
-  color: #1a2a3a;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.3s;
+  margin-bottom: 1rem;
+  color: #222e3a;
 }
 
+/* List styles */
 ul, ol {
-  margin-left: 1.5em;
+  padding-left: 1.5em;
 }
 
-/* Projects */
+/* Project card styles */
 #projects article {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,46,58,0.08);
   margin-bottom: 2rem;
-  background: #f3f6fa;
-  border-radius: 10px;
-  padding: 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  transition: background 0.3s, box-shadow 0.3s;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
 }
 #projects article:hover {
-  background: #e6eef7;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 16px rgba(34,46,58,0.15);
 }
 #projects figure {
-  margin: 0;
-  min-width: 120px;
-  max-width: 150px;
-  flex-shrink: 0;
+  margin: 0 0 1rem 0;
+  text-align: center;
 }
 #projects img {
-  width: 100%;
+  max-width: 120px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s;
+  box-shadow: 0 1px 4px rgba(34,46,58,0.10);
+  outline: none;
+  transition: box-shadow 0.2s;
 }
 #projects img:focus {
-  outline: 2px solid #3a4a5a;
-  box-shadow: 0 0 0 4px #b0c4d8;
+  box-shadow: 0 0 0 3px #b0c4d8;
 }
 #projects figcaption a {
-  color: #1a2a3a;
-  font-weight: 600;
-  text-decoration: underline;
-  transition: color 0.2s;
+  color: #222e3a;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 #projects figcaption a:hover,
 #projects figcaption a:focus {
-  color: #2a7ae2;
+  text-decoration: underline;
+  color: #3a4a5a;
 }
-
 #projects p {
-  margin: 0.2em 0 0.7em 0;
+  margin: 0.5em 0;
 }
 
-/* Skills */
+/* Skills section styles */
 #skills ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: 1rem;
   list-style: none;
   padding: 0;
 }
 #skills li {
-  background: #e6eef7;
-  color: #1a2a3a;
-  padding: 0.5em 1.2em;
-  border-radius: 6px;
-  font-weight: 500;
+  background: #eaf0f6;
+  border-radius: 8px;
+  padding: 0.5em 1em;
   font-size: 1rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s;
+  cursor: default;
 }
 #skills li:hover {
-  background: #b0c4d8;
-  color: #222e3a;
+  background: #d0e0f0;
 }
 
-/* Contact Form */
+/* Contact form styles */
 #contact form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,46,58,0.08);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  background: #f3f6fa;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  max-width: 500px;
-  margin: 0 auto;
-  transition: background 0.3s, box-shadow 0.3s;
+  gap: 1rem;
 }
 #contact label {
   font-weight: 500;
   margin-bottom: 0.3em;
-  color: #1a2a3a;
+  color: #222e3a;
 }
 #contact input,
 #contact textarea {
   width: 100%;
   padding: 0.7em;
   border: 1px solid #b0c4d8;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
-  font-family: inherit;
-  background: #fff;
-  color: #222;
-  transition: border 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s;
 }
 #contact input:focus,
 #contact textarea:focus {
-  border: 1.5px solid #2a7ae2;
-  box-shadow: 0 0 0 2px #b0c4d8;
+  border-color: #222e3a;
   outline: none;
 }
 #contact button {
-  background: #2a7ae2;
+  background: #222e3a;
   color: #fff;
   border: none;
-  padding: 0.8em 1.5em;
-  border-radius: 5px;
+  border-radius: 6px;
+  padding: 0.8em 2em;
   font-size: 1.1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s;
 }
 #contact button:hover,
 #contact button:focus {
-  background: #174ea6;
-  color: #fff;
+  background: #3a4a5a;
 }
 
+/* Footer styles */
 footer {
   background: #222e3a;
-  color: #b0c4d8;
+  color: #fff;
   text-align: center;
-  padding: 1.2rem 0 1.2rem 0;
+  padding: 1rem 0;
   font-size: 1rem;
-  letter-spacing: 0.5px;
-  margin-top: 2rem;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
-  transition: background 0.3s, color 0.3s;
 }
 
-/* Hamburger menu styles */
+/* Hamburger menu styles for mobile navigation */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -245,10 +222,10 @@ footer {
   background: none;
   border: none;
   outline: none;
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 20;
+  position: absolute;      /* Change from absolute to fixed */
+  top: 10px;            /* Move closer to the very top */
+  left: 10px;           /* Move closer to the very left */
+  z-index: 100;         /* Ensure it's above other elements */
 }
 .hamburger span {
   height: 4px;
@@ -263,10 +240,11 @@ footer {
   background: #fff;
 }
 
-/* Hide nav on mobile, show hamburger */
+/* Responsive styles for mobile screens */
 @media (max-width: 700px) {
   header {
     position: relative;
+    padding-top: 60px;  /* Add space at the top for hamburger */
   }
   nav[role="navigation"] {
     position: relative;
@@ -316,7 +294,21 @@ footer {
   }
 }
 
-/* Skill icons using ::before */
+@media (max-width: 500px) {
+    /* Header title and subtitle */
+  header h1 {
+    padding: 3rem 0 0 0; /* Adjust padding to account for hamburger */
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+/* Skill icons using ::before for visual enhancement */
 #skills li::before {
   display: inline-block;
   margin-right: 0.5em;
@@ -330,15 +322,4 @@ footer {
 #skills li:nth-child(6)::before { content: "🔗"; } /* Git & GitHub */
 #skills li:nth-child(7)::before { content: "📱"; } /* Responsive Design */
 
-@media (max-width: 700px) {
-  main {
-    padding: 1rem;
-  }
-  #projects article {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  #skills ul {
-    gap: 0.7rem;
-  }
-}
+/* End of CSS */

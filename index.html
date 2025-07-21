@@ -35,22 +35,35 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <article>
-                <figure>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/PowerShell_5.0_icon.png/250px-PowerShell_5.0_icon.png" alt="PowerShell Core 6.0 icon representing the EVE_Online_API PowerShell project interface, showing a blue terminal window with a white angle bracket and underscore." tabindex="0">
-                    <figcaption><a href="https://github.com/rbashley/EVE_Online_API">EVE_Online_API</a></figcaption>
-                </figure>
-                <p>EVE_Online_API is a PowerShell-based tool that interacts with the EVE Online game API, allowing users to retrieve and analyze in-game data efficiently. This project demonstrates skills in API integration, scripting, and data processing.</p>
-                <p><strong>Status:</strong> Work In Progress</p>
-            </article>
-            <article>
-                <figure>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/800px-Python.svg.png" alt="Python logo representing the Python_Ball game interface, featuring two intertwined yellow and blue snakes forming a stylized 'P'." tabindex="0">
-                    <figcaption><a href="https://github.com/rbashley/Python_Ball">Python_Ball</a></figcaption>
-                </figure>
-                <p>Python_Ball is an interactive Python-based game where players control a ball. This project highlights skills in Python programming, game logic, and user interface design using libraries such as vpython.</p>
-                <p><strong>Status:</strong> Work In Progress</p>
-            </article>
+            <div id="project-filter">
+                <input type="text" id="filter-name" placeholder="Filter by project name..." aria-label="Filter by project name">
+                <select id="filter-skill" aria-label="Filter by skill">
+                    <option value="">All Skills</option>
+                    <option value="PowerShell">PowerShell</option>
+                    <option value="API">API</option>
+                    <option value="Python">Python</option>
+                    <option value="Game">Game</option>
+                    <option value="vpython">vpython</option>
+                </select>
+            </div>
+            <div id="projects-list">
+                <article data-name="EVE_Online_API" data-skills="PowerShell,API">
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/PowerShell_5.0_icon.png/250px-PowerShell_5.0_icon.png" alt="PowerShell Core 6.0 icon representing the EVE_Online_API PowerShell project interface, showing a blue terminal window with a white angle bracket and underscore." tabindex="0">
+                        <figcaption><a href="https://github.com/rbashley/EVE_Online_API">EVE_Online_API</a></figcaption>
+                    </figure>
+                    <p>EVE_Online_API is a PowerShell-based tool that interacts with the EVE Online game API, allowing users to retrieve and analyze in-game data efficiently. This project demonstrates skills in API integration, scripting, and data processing.</p>
+                    <p><strong>Status:</strong> Work In Progress</p>
+                </article>
+                <article data-name="Python_Ball" data-skills="Python,Game,vpython">
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/800px-Python.svg.png" alt="Python logo representing the Python_Ball game interface, featuring two intertwined yellow and blue snakes forming a stylized 'P'." tabindex="0">
+                        <figcaption><a href="https://github.com/rbashley/Python_Ball">Python_Ball</a></figcaption>
+                    </figure>
+                    <p>Python_Ball is an interactive Python-based game where players control a ball. This project highlights skills in Python programming, game logic, and user interface design using libraries such as vpython.</p>
+                    <p><strong>Status:</strong> Work In Progress</p>
+                </article>
+            </div>
         </section>
 
         <section id="skills">
@@ -71,19 +84,20 @@
             <form action="#" method="post">
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required aria-required="true">
+                    <input type="text" id="name" name="name" aria-required="true">
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
+                    <input type="email" id="email" name="email" aria-required="true">
                 </div>
                 <div>
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                    <textarea id="message" name="message" rows="4" aria-required="true"></textarea>
                 </div>
                 <div>
                     <button type="submit">Send Message</button>
                 </div>
+                <div id="form-feedback" aria-live="polite"></div>
             </form>
         </section>
     </main>
