@@ -2,6 +2,9 @@
 
 This is a personal portfolio website for Randall Ashley, a full-stack developer. The site showcases personal projects, skills, and provides a contact form for visitors.
 
+**View the live site:**  
+[https://rbashley.github.io/Course_3-1_Website_HTML/](https://rbashley.github.io/Course_3-1_Website_HTML/)
+
 ## Features
 - Responsive and accessible design
 - Project showcase with descriptions and status
