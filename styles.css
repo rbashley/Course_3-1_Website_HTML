@@ -312,8 +312,11 @@ footer {
 #skills li::before {
   display: inline-block;
   margin-right: 0.5em;
-  font-size: 1.1em;
+  font-size: 1.2em;
+  vertical-align: middle;
 }
+
+/* Use emoji or Unicode for most, and a background-image for Blazor and others if needed */
 #skills li:nth-child(1)::before { content: "🟧"; } /* HTML5 */
 #skills li:nth-child(2)::before { content: "🎨"; } /* CSS3 */
 #skills li:nth-child(3)::before { content: "🟨"; } /* JavaScript */
@@ -321,5 +324,23 @@ footer {
 #skills li:nth-child(5)::before { content: "🟩"; } /* Node.js */
 #skills li:nth-child(6)::before { content: "🔗"; } /* Git & GitHub */
 #skills li:nth-child(7)::before { content: "📱"; } /* Responsive Design */
+
+/* Blazor icon using background-image */
+#skills li:nth-child(8)::before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  background: url('Assets/Blazor.png') no-repeat center/contain;
+  vertical-align: middle;
+}
+
+/* C# */
+#skills li:nth-child(9)::before { content: "💠"; } /* C# */
+
+/* Web Application Development */
+#skills li:nth-child(10)::before { content: "🌐"; } /* Web Application Development */
+
+/* Frontend Architecture */
+#skills li:nth-child(11)::before { content: "🏛️"; } /* Frontend Architecture */
 
 /* End of CSS */
